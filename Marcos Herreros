@@ -1,0 +1,83 @@
+****************
+PÁGINA PRINCIPAL
+****************
+
+import java.util.Scanner;
+public class Practica08Maquinadecafe {
+ 
+    public static void main(String[] args) {
+        System.out.println("Para elegir el tipo de cafe deseado, introduzca el porcentaje de cafe que desee: ");
+  
+        Scanner sc = new Scanner(System.in); 
+        String porcentajeCafe = sc.nextLine(); 
+        sc.close(); 
+        System.out.println("Has elegido: "+porcentajeCafe+"% de cafe"); 
+        
+       Cafe o1 = new Cafe(porcentajeCafe);
+       o1.hacerCafe();
+       System.out.println(o1);
+       
+    }
+}
+
+**********
+CLASE CAFE
+**********
+
+public class Cafe {
+    private String cafe=null;
+    private String porcentajeCafe=null;
+    
+    public Cafe(String porcentajeCafe){
+        this.porcentajeCafe=porcentajeCafe;
+    }
+    public void hacerCafe(){
+        if(porcentajeCafe.equals("20")){
+            cafe ="Manchado: "
+                 +"|"
+                 +" "
+                 +" " 
+                 +" "
+                 +" "
+                 +" "
+                 +" "
+                 +" " 
+                 +" "
+                 +"#"
+                 +"#|";
+            System.out.println(cafe);
+            }
+        
+        else if(porcentajeCafe.equals("50")){
+            cafe="Cafe con leche: "
+                 +"|"
+                 +" "
+                 +" " 
+                 +" "
+                 +" "
+                 +" "
+                 +"#"
+                 +"#" 
+                 +"#"
+                 +"#"
+                 +"#|";   
+            System.out.println(cafe);
+            }
+        else if(porcentajeCafe.equals("80")){
+            cafe="Cortado: "
+                 +"|"
+                 +" "
+                 +" " 
+                 +"#"
+                 +"#"
+                 +"#"
+                 +"#"
+                 +"#" 
+                 +"#"
+                 +"#"
+                 +"#|";  
+            System.out.println(cafe);
+        }
+            
+    }   
+}
